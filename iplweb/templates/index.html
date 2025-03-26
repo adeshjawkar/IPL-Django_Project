@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPL Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('https://4kwallpapers.com/images/walls/thumbs_3t/8324.png') no-repeat center center/cover;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .login-container {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            color: #fff;
+            width: 320px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0px 4px 8px rgba(255, 255, 0, 0.6);
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+        h2 {
+            color: #ffcc00;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            text-align: center;
+        }
+        button {
+            background: #ff4500;
+            color: white;
+            padding: 10px;
+            border: none;
+            width: 100%;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+        button:hover {
+            background: #e63900;
+        }
+        .forgot-password {
+            margin-top: 10px;
+        }
+        .forgot-password a {
+            color: #ffcc00;
+            text-decoration: none;
+        }
+        .forgot-password a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>IPL Login</h2>
+        <form action="/login/" method="POST">
+            {% csrf_token %}
+            <input type="text" name="userid" placeholder="Enter Userid" required>
+            <input type="password" name="password" placeholder="Enter Password" required>
+            <button type="submit" >Login</button>
+            
+        </form>
+        <div class="forgot-password">
+            <a href="#">Forgot Password?</a>
+        </div>
+    </div>
+</body>
+</html>

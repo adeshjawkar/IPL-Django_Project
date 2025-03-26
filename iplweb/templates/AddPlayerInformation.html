@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add IPL Player</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('https://wallpapercave.com/wp/wp3518629.jpg') no-repeat center center/cover;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .form-container {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            color: #fff;
+            width: 320px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0px 4px 8px rgba(255, 255, 0, 0.6);
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+        h2 {
+            color: #ffcc00;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            text-align: center;
+        }
+        button {
+            background: #ff4500;
+            color: white;
+            padding: 10px;
+            border: none;
+            width: 100%;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+        button:hover {
+            background: #e63900;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Add IPL Player</h2>
+        <form action="/success/" method="post">
+            {% csrf_token %}
+            <input type="text" name="player_name" placeholder="Enter Player Name" required>
+            <input type="number" name="player_age" placeholder="Enter Player Age" required>
+            <input type="text" name="player_country" placeholder="Enter Player Country" required>
+            <select name="ipl_team" required>
+                <option value="">Select IPL Team</option>
+                <option value="MI">Mumbai Indians</option>
+                <option value="CSK">Chennai Super Kings</option>
+                <option value="RCB">Royal Challengers Bangalore</option>
+                <option value="KKR">Kolkata Knight Riders</option>
+                <option value="SRH">Sunrisers Hyderabad</option>
+                <option value="DC">Delhi Capitals</option>
+                <option value="RR">Rajasthan Royals</option>
+                <option value="PBKS">Punjab Kings</option>
+                <option value="GT">Gujarat Titans</option>
+                <option value="LSG">Lucknow Super Giants</option>
+            </select>
+            <input type="number" name="player_price" placeholder="Enter 2025 Price (in Crores)" required>
+            <button type="submit">Add Player</button>
+        </form>
+    </div>
+</body>
+</html>

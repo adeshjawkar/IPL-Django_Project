@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete IPL Player</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('https://wallpapercave.com/wp/wp3518629.jpg') no-repeat center center/cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .form-container {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            color: #fff;
+            width: 320px;
+            box-shadow: 0px 4px 8px rgba(255, 255, 0, 0.6);
+        }
+        h2 { color: #ffcc00; }
+        input { width: 100%; padding: 10px; margin: 10px 0; border-radius: 5px; text-align: center; }
+        button { background: #ff4500; color: white; padding: 10px; border-radius: 5px; cursor: pointer; }
+        button:hover { background: #e63900; }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Delete IPL Player</h2>
+        <form method="POST" action="/delete/">
+            {% csrf_token %}
+            <input type="text" name="player_name" placeholder="Enter Player Name to Delete" required>
+            <button type="submit">Delete Player</button>
+        </form>
+    </div>
+</body>
+</html>

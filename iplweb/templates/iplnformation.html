@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPL Information</title>
+
+    <style>
+        /* IPL-Themed Background */
+        body {
+            font-family: Arial, sans-serif;
+            background: url('https://img.freepik.com/free-photo/beautiful-snowy-mountains-with-lake-dark-cloudy-sky_181624-277.jpg?semt=ais_hybrid') no-repeat center top;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding-bottom: 20px;
+        }
+
+        /* Dark Overlay for Readability */
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        /* Page Content */
+        .content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        /* Image at Top */
+        .image-container {
+            text-align: center;
+            margin-top: 20px;
+            z-index: 2;
+        }
+
+        .image-container img {
+            max-width: 80%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(255, 255, 0, 0.6);
+        }
+
+        /* Buttons Container (Moved to Bottom) */
+        .container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            max-width: 900px;
+            margin: auto;
+            position: relative;
+            z-index: 2;
+            padding: 20px;
+        }
+
+        /* Button Styling */
+        a {
+            background: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            text-decoration: none;
+            box-shadow: 0 4px 8px rgba(255, 255, 0, 0.6);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        a:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(255, 204, 0, 0.8);
+        }
+
+        /* Full Width Button */
+        .full-width {
+            grid-column: span 2;
+        }
+
+        /* Footer Section */
+        .footer {
+            width: 100%;
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+            z-index: 2;
+        }
+
+        h1 {
+            color: #ffcc00;
+            font-size: 32px;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.9);
+            margin-bottom: 15px;
+        }
+
+        /* Responsive Fixes */
+        @media (max-width: 600px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+            .full-width {
+                grid-column: span 1;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Image at Top -->
+    <div class="image-container">
+        <img src="https://i.pinimg.com/474x/93/fb/a0/93fba02844fee9c3e79699ef6b03b5c1.jpg" alt="IPL Banner">
+    </div>
+
+    <!-- IPL Information Table Moved to Bottom -->
+    <div class="footer">
+        <h1>🏏 IPL Information 🏏</h1>
+
+        <div class="container">
+            <a href="/searchplayer/">🔍 Search Teams Players</a>
+            <a href="/addplayer/">➕ Add Player Information</a>
+            <a href="/deleteplayer/">❌ Delete Player</a>
+            <a href="/allplayers/">📜 View All IPL Players</a>
+            <a href="/searchplayerhistory/" class="full-width">📊 Search Player History</a>
+        </div>
+    </div>
+
+</body>
+</html>
